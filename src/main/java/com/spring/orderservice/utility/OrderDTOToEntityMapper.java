@@ -15,6 +15,7 @@ public class OrderDTOToEntityMapper {
                 .customerId(orderDTO.getCustomerId())
                 .orderDate(LocalDateTime.now())
                 .quantity(orderDTO.getQuantity())
+                .productType(orderDTO.getProductType())
                 .build();
     }
 }

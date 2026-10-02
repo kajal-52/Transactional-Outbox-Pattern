@@ -1,4 +1,4 @@
-package com.spring.orderservice;
+package com.spring.orderservice.controller;
 
 
 import com.spring.orderservice.entity.Order;
@@ -19,7 +19,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping
+    @PostMapping("/order")
     public ResponseEntity<Order> createOrder(@RequestBody OrderDTO orderDTO) {
         Order createOrder = orderService.createOrder(orderDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createOrder);

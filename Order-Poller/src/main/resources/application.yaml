@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Order-Poller
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${postgres:}
+    password: ${postgres:}
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092
+  server:
+    port: 9192
+order:
+  poller:
+    topicName: outbox-events
+#logging:
+#  level:
+#    org.apache.kafka.clients.admin.internals.AdminMetadataManager: WARN
